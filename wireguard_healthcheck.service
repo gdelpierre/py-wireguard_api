@@ -1,0 +1,12 @@
+[Unit]
+Description=Wireguard HealthCheck
+Requires=network.target
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/wg_healthcheck.py
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
